@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewModel.Vista.CalcularIMC" Title="Calcular IMC"  NavigationPage.HasNavigationBar="False">
+   
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Peso" />
+            <Entry Placeholder="Escribe tu peso" PlaceholderColor="Red"  Keyboard="Numeric" Text="{Binding Peso}"/>
+        <Label Text="Altura"/>
+        <Entry Placeholder="Escribe tu altura" PlaceholderColor="Red" Keyboard="Numeric" Text="{Binding Altura}"/>
+        <Label Text="{Binding Resultado}" FontSize="50" TextColor="Azure" HorizontalOptions="Center" FontAttributes="Bold" />
+        <Button Text="Calcular" BackgroundColor="Aquamarine" CornerRadius="30" HorizontalOptions="Center" VerticalOptions="Center" 
+                Command="{Binding ProcesoIMCommand}"/>
+
+        
+       </StackLayout>
+   
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewModel.Vista.Pagina2" Title="Pagina DOS"  NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Image Source="https://cdn.pixabay.com/photo/2012/04/02/15/54/arrow-24817_1280.png" VerticalOptions="Start" 
+               HorizontalOptions="Start" HeightRequest="30" Margin="10" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ProcesoAsynRegresarPagina1Command}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <CollectionView ItemsSource="{Binding ListaUsuarios}" VerticalOptions="Center" Margin="70,0,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding Imagen}" HeightRequest="100"/>
+                        <Label Text="{Binding Nombre}" VerticalOptions="Center"/>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

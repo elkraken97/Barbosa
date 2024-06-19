@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewModel.Vista.Pagina1" Title="Pagina UNO" NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="Aquamarine">
+        
+        <StackLayout>
+         
+            <Button Text="Alerta Clasica" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding ProcesoAlertCommand}"/>
+          
+            <Label Text="Numero 1: " TextColor="Black" FontAttributes="Bold" />
+            <Entry Placeholder="Escribe el primer numero" PlaceholderColor="Red" Keyboard="Numeric"  HorizontalOptions="StartAndExpand" Text="{Binding N1}"/>
+             
+        
+            <Label Text="Numero 2: " TextColor="Black" FontAttributes="Bold" />
+            <Entry Placeholder="Escribe el segundo numero" PlaceholderColor="Red" Keyboard="Numeric"  HorizontalOptions="StartAndExpand" Text="{Binding N2}"/>
+
+      
+            <Button  Text="Sumar" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding ProcesoSumarCommand}" TextTransform="None" CornerRadius="20" BackgroundColor="Aqua" />
+            <Label Text="{Binding R}" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="50" />
+            
+         
+            <Button Text="Navegar a Pagina 2" FontAttributes="Bold" CornerRadius="10" BackgroundColor="Aqua" Command="{Binding ProcesoAsynNavegarPagina2Command}"/>
+            <Button Text="calcular IMC " FontAttributes="Bold" CornerRadius="10" BackgroundColor="Aqua" Command="{Binding  ProcesoAsynNavegarCalcularIMCCommand}"/>
+
+       
+            <DatePicker TextColor="Black" FontAttributes="Bold" FontSize="25"  HorizontalOptions="Center"  Date="{Binding Fecha}">
+                <DatePicker.Format>dd/MMM/yyyy</DatePicker.Format>
+            </DatePicker>
+            <Label Text="{Binding ResultadoFecha, Mode=TwoWay}" HorizontalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" FontSize="25" />
+
+
+        </StackLayout>
+
+   
+        <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Orientation="Horizontal">
+            <Label Text="Picker: "  TextColor="Black" FontAttributes="Bold" FontSize="30" VerticalOptions="EndAndExpand"/>
+            <Picker TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Title="Selecciona una Opción" SelectedItem="{Binding seleccionarTipoUsuario}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Gerente</x:String>
+                        <x:String>Empleado</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </StackLayout>
+
+
+    </Grid>
+    
+</ContentPage>
+    
